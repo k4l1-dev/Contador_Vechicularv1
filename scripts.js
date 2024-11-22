@@ -3,11 +3,15 @@ const contenedores = document.getElementById("contadores");
 for (let i = 1; i <= datos.length; i++) {
   contenedores.innerHTML += `
     <div class="contador">
-    <span class="etiqueta" id="etiqueta-${i}">${datos[i - 1].etiqueta}:</span>      
-    <img id="imagen-${i}" src="${datos[i - 1].imagen}" alt="${datos[i - 1].etiqueta}" style="width: 75px; height: 40px;">
+     <div class="superior">
+      <img id="imagen-${i}" src="${datos[i - 1].imagen}" alt="${datos[i - 1].etiqueta}" style="width: 75px; height: 40px;">
+      <span class="etiqueta" id="etiqueta-${i}">${datos[i - 1].etiqueta}</span>
+      </div>
+      <div class="acciones">
       <button onclick="incrementar(${i})">+ Incrementar</button>
       <span id="contador-${i}">0</span>
       <button onclick="reducir(${i})">- Reducir</button>
+      </div>
     </div>
   `;
 }
